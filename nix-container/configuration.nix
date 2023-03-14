@@ -16,8 +16,9 @@
   networking.useHostResolvConf = false;
   networking.firewall.enable = false;
 
+  services.nscd.enableNsncd = true;
   services.dbus.implementation = "broker";
-  services.sshd.enable = true;
+  services.openssh.enable = true;
 
   environment.systemPackages = with pkgs; [
      vim
@@ -31,5 +32,5 @@
     extra-experimental-features = nix-command flakes
   '';
 
-  system.stateVersion = "21.11";
+  system.stateVersion = "22.11";
 }
