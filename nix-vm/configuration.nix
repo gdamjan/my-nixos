@@ -15,12 +15,14 @@
     "console=tty1"
   ];
 
+  networking.hostName = "nix-vm";
+
   time.timeZone = "Europe/Skopje";
 
-  networking.hostName = "nix-vm";
   networking.useDHCP = false;
   networking.useNetworkd = true;
   networking.interfaces.enp3s0.useDHCP = true;
+
   services.nscd.enableNsncd = true;
   services.dbus.implementation = "broker";
   services.openssh.enable = true;
@@ -30,6 +32,10 @@
      wget
      git
   ];
+
+  nix.extraOptions = ''
+    extra-experimental-features = nix-command flakes
+  '';
 
   system.stateVersion = "22.11";
 }
