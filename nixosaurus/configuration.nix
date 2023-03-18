@@ -7,7 +7,6 @@
       ./desktop.nix
     ];
 
-
   boot.kernelPackages = pkgs.linuxKernel.packageAliases.linux_latest; # pkgs.linuxKernel.packages.linux_5_19;
   boot.loader.systemd-boot.enable = true;
   boot.initrd.systemd.enable = true;
