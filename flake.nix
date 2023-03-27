@@ -10,9 +10,17 @@
           inherit system;
           specialArgs = { inherit inputs; };
           modules = [
-            ./configuration.nix
+            ./nix-vm/configuration.nix
           ];
         };
+        nix-container = nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./nix-container/configuration.nix
+          ];
+        };
+
       };
     };
 }
