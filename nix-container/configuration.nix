@@ -1,16 +1,14 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
+  boot.isContainer = true;
   boot.kernel.enable = false;
   boot.modprobeConfig.enable = false;
-  console.enable = false;
-  nix.optimise.automatic = false; # the store is host managed
-  powerManagement.enable = false;
-  documentation.nixos.enable = false;
-  security.audit.enable = false;
-
   boot.loader.initScript.enable = true;
-  system.build.installBootLoader = "${pkgs.coreutils}/bin/true";
 
   networking.hostName = "nix-container";
+  networking.useHostResolvConf = false;
+  services.openssh.startWhenNeeded = false;
+  services.udev.enable = lib.mkForce true;
+  # environment.variables.NIX_REMOTE = "";
 }
