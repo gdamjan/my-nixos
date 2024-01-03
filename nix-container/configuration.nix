@@ -9,7 +9,6 @@
   networking.hostName = "nix-container";
   networking.useHostResolvConf = false;
   services.openssh.startWhenNeeded = false;
-  services.udev.enable = lib.mkForce true;
   # environment.variables.NIX_REMOTE = "";
 
   nix.settings.sandbox = false;
