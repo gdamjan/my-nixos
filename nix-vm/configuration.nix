@@ -13,8 +13,6 @@
     "console=tty1"
   ];
 
-  time.timeZone = "Europe/Skopje";
-
   networking.hostName = "nix-vm";
   networking.interfaces.enp3s0.useDHCP = true;
 }

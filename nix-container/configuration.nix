@@ -12,7 +12,5 @@
   boot.loader.initScript.enable = true;
   system.build.installBootLoader = "${pkgs.coreutils}/bin/true";
 
-  time.timeZone = "Europe/Skopje";
-
   networking.hostName = "nix-container";
 }

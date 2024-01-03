@@ -23,7 +23,6 @@
 
   services.nscd.enableNsncd = true;
 
-  time.timeZone = "Europe/Skopje";
   i18n.defaultLocale = "en_GB.UTF-8";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
