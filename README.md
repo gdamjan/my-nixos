@@ -7,7 +7,7 @@ I'll dump here the configuration files for my nixos machines (virtual, physical,
 
 to rebuild the system, just do as ever:
 ```
-nixos-rebuild boot --no-update-lock-file
+nixos-rebuild boot --flake .
 ```
 it'll pick up the `nixosConfigurations.nix-vm` flake output
 automatically, based on the hostname which is `nix-vm`.
