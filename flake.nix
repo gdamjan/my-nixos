@@ -8,7 +8,7 @@
       nixosConfigurations = {
         nix-vm = nixpkgs.lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit inputs; };
+          specialArgs = { inherit self inputs; };
           modules = [
             ./common.nix
             ./nix-vm/configuration.nix

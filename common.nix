@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ self, pkgs, ... }: {
   time.timeZone = "Europe/Skopje";
 
   networking.useDHCP = false;
@@ -20,6 +20,6 @@
     extra-experimental-features = nix-command flakes
   '';
 
-  # system.configurationRevision = pkgs.lib.mkIf (self ? rev) self.rev;
+  system.configurationRevision = pkgs.lib.mkIf (self ? rev) self.rev;
   system.stateVersion = "23.11";
 }
