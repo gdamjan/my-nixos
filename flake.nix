@@ -10,6 +10,7 @@
           inherit system;
           specialArgs = { inherit inputs; };
           modules = [
+            ./common.nix
             ./nix-vm/configuration.nix
           ];
         };
@@ -17,10 +18,10 @@
           inherit system;
           specialArgs = { inherit inputs; };
           modules = [
+            ./common.nix
             ./nix-container/configuration.nix
           ];
         };
-
       };
     };
 }

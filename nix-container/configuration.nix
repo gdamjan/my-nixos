@@ -1,36 +1,18 @@
-# /etc/nixos/configuration.nix
-
 { config, pkgs, ... }:
 
 {
-  imports = [];
+  boot.kernel.enable = false;
+  boot.modprobeConfig.enable = false;
+  console.enable = false;
+  nix.optimise.automatic = false; # the store is host managed
+  powerManagement.enable = false;
+  documentation.nixos.enable = false;
+  security.audit.enable = false;
 
-  boot.isContainer = true;
   boot.loader.initScript.enable = true;
+  system.build.installBootLoader = "${pkgs.coreutils}/bin/true";
 
   time.timeZone = "Europe/Skopje";
 
   networking.hostName = "nix-container";
-  networking.useDHCP = false;
-  networking.useNetworkd = true;
-  networking.useHostResolvConf = false;
-  networking.firewall.enable = false;
-
-  services.nscd.enableNsncd = true;
-  services.dbus.implementation = "broker";
-  services.openssh.enable = true;
-
-  environment.systemPackages = with pkgs; [
-     vim
-     wget
-     git
-  ];
-
-
-  nix.settings.sandbox = false;
-  nix.extraOptions = ''
-    extra-experimental-features = nix-command flakes
-  '';
-
-  system.stateVersion = "22.11";
 }
