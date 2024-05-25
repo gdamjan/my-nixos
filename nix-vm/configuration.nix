@@ -11,6 +11,7 @@
   boot.kernelParams = [
     "console=ttyS0,115200"
     "console=tty1"
+    "rootflags=nodev"
   ];
 
   networking.hostName = "nix-vm";
