@@ -3,16 +3,10 @@
   imports =
     [
       ./hardware-configuration.nix
+      ./boot.nix
       ./services.nix
       ./desktop.nix
     ];
-
-  boot.kernelPackages = pkgs.linuxKernel.packageAliases.linux_latest; # pkgs.linuxKernel.packages.linux_5_19;
-  boot.loader.systemd-boot.enable = true;
-  boot.initrd.systemd.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.timeout = 1;
-  boot.tmp.useTmpfs = true;
 
   networking.hostName = "nixosaurus";
   networking.networkmanager.enable = true;
