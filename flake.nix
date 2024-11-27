@@ -23,6 +23,12 @@
             ./nix-container/configuration.nix
           ];
         };
+        nixosaurus = nixpkgs.lib.nixosSystem {
+          inherit system specialArgs;
+          modules = [
+            ./nixosaurus/configuration.nix
+          ];
+        };
       };
     };
 }

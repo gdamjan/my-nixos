@@ -19,7 +19,7 @@ in
     bash
   '';
 
-  hardware.opengl.extraPackages = with pkgs; [ vaapiIntel libvdpau-va-gl vaapiVdpau ];
+  hardware.graphics.extraPackages = with pkgs; [ vaapiIntel libvdpau-va-gl vaapiVdpau ];
   hardware.bluetooth.enable = true;
   hardware.bluetooth.settings = { General = { Experimental=true; }; };
   security.rtkit.enable = true;
@@ -43,8 +43,8 @@ in
 
   programs.sway.enable = true;
  
-  fonts.enableDefaultFonts = false;
-  fonts.fonts = with pkgs; [
+  fonts.enableDefaultPackages = false;
+  fonts.packages = with pkgs; [
     dejavu_fonts
     font-awesome
     material-icons
@@ -52,7 +52,7 @@ in
     roboto
   ];
   environment.systemPackages = with pkgs; [
-    gnome3.adwaita-icon-theme
+    adwaita-icon-theme
     glib
     dconf
   ];

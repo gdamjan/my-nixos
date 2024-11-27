@@ -12,12 +12,12 @@
   boot.initrd.systemd.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.timeout = 1;
-  boot.tmpOnTmpfs = true;
+  boot.tmp.useTmpfs = true;
 
   networking.hostName = "nixosaurus";
   networking.networkmanager.enable = true;
   networking.networkmanager.wifi.backend = "iwd";
-  networking.networkmanager.extraConfig = "wifi.iwd.autoconnect=yes";
+  networking.networkmanager.settings.device."wifi.iwd.autoconnect" = "yes";
   networking.wireless.iwd.enable = true;
   networking.firewall.enable = false;
 
