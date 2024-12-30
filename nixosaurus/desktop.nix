@@ -5,19 +5,9 @@ let
   '';
 in
 {
-  services.greetd = {
+  services.displayManager.ly = {
     enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd ${desktop-session}";
-      };
-    };
   };
-
-  environment.etc."greetd/environments".text = ''
-    ${desktop-session}
-    bash
-  '';
 
   hardware.graphics.extraPackages = with pkgs; [ vaapiIntel libvdpau-va-gl vaapiVdpau ];
   hardware.bluetooth.enable = true;
