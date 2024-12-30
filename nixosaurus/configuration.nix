@@ -15,6 +15,8 @@
   networking.wireless.iwd.enable = true;
   networking.firewall.enable = false;
 
+  services.logind.lidSwitch = "ignore";
+
   services.nscd.enableNsncd = true;
 
   i18n.defaultLocale = "en_GB.UTF-8";
