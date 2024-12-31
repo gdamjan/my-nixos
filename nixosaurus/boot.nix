@@ -12,7 +12,6 @@
   boot.initrd.supportedFilesystems = [ "ext4" ];
   boot.initrd.systemd.enable = true;
   boot.initrd.systemd.root = "gpt-auto";
-  boot.initrd.systemd.tpm2.enable = true;
   boot.initrd.luks.forceLuksSupportInInitrd = true;
   boot.initrd.systemd.emergencyAccess = "$y$j9T$IdTz7H.u4VSAfnlGs/6381$VHgm/PZOirdvcHbwPDYCkyxqKkMzIVTczagNp4OuSa1";
 
