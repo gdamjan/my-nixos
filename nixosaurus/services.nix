@@ -2,9 +2,12 @@
 {
   services.resolved.enable = true;
   services.openssh.enable = true;
+  services.fwupd.enable = true;
+  services.upower.enable = true;
 
   systemd.services.rqbit = {
     enable = true;
+    restartIfChanged = false;
     description = "A streaming bittorrent client in Rust";
     unitConfig = {
       After = "network-online.target";

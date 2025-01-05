@@ -39,6 +39,8 @@
     nix-tree
     lm_sensors
     tmux
+    go2tv
+    podman
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

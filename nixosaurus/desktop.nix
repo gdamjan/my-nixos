@@ -24,7 +24,6 @@ in
     pulse.enable = true;
   };
 
-  services.upower.enable = true;
   services.flatpak.enable = true;
 
   xdg.portal.enable = true;
@@ -32,7 +31,7 @@ in
   #xdg.portal.gtkUsePortal = true;
 
   programs.sway.enable = true;
- 
+
   fonts.enableDefaultPackages = false;
   fonts.packages = with pkgs; [
     dejavu_fonts
